@@ -5,15 +5,9 @@
     <link rel="stylesheet" href="bootstrap.css">
     <title>Achievements</title>
 </head>
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Home</a>
-        <a href="About.html" class="navbar-text">About</a>
-        <a href="Achievements.html" class="navbar-text active">Achievements</a>
-        <a href="https://gitlab.doc.ic.ac.uk/u/jat415" class="navbar-text">Projects</a>
-        <a href="http://www.imperial.ac.uk/computing/" class="navbar-text">Back to DoC Homepage</a>
-    </div>
-</nav>
+    <?php
+        include 'header.html';
+    ?>
 <body>
 <div class="container">
     <div class="row">
