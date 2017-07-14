@@ -22,16 +22,16 @@
             </a>
         </div>
         <div class="col-md-4">
-            <a href="achievements.php" class="thumbnail">
+            <a href="publicCV.pdf" class="thumbnail">
                 <img src="Images/Maths.png" class="img-responsive img-rounded">
                 <div class="caption text-center">
                     <h4>My Qualifications</h4>
-                    <p>Read my qualifications and CV</p>
+                    <p>Read my qualifications/CV</p>
                 </div>
             </a>
         </div>
         <div class="col-md-4">
-            <a href="https://gitlab.doc.ic.ac.uk/u/jat415" class="thumbnail">
+            <a href="projects.php" class="thumbnail">
                 <img src="Images/Code.png" class="img-responsive img-rounded">
                 <div class="caption text-center">
                     <h4>My Projects</h4>
