@@ -25,7 +25,6 @@
             if (!$config = parse_ini_file('../dbinfo.ini.php')) {
                 echo "Error: Database info ini cannot be read";
             }
-            echo "output".$config['username'];
             $connectionInfo = array("UID" => $config["username"], "pwd" => $config["password"], "Database" => $config["dbname"], "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
             $serverName = "tcp:jtavernorprojects.database.windows.net,1433";
             $conn = sqlsrv_connect($serverName, $connectionInfo);
