@@ -44,7 +44,11 @@
                 echo "<td>".$row['Language']."</td>";
                 echo "<td>".$row['Type']."</td>";
                 echo "<td>".$row['Year']."</td>";
-                echo "<td>".$row['Link']."</td>";
+                if ($row['Link']) {
+                    echo "<td><a href='".$row['Link']."'>Available</a></td>";
+                } else {
+                    echo "<td>Unavailable</td>";
+                }
                 echo "</tr>";
             }
             ?>
