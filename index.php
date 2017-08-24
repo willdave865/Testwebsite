@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-md-4">
             <a href="about.php" class="thumbnail">
-                <img src="Images/PersonalPicture.png" class="img-responsive img-rounded">
+                <img src="images/PersonalPicture.png" class="img-responsive img-rounded">
                 <div class="caption text-center">
                     <h4>About me</h4>
                     <p>Find out more about me</p>
@@ -23,7 +23,7 @@
         </div>
         <div class="col-md-4">
             <a href="publicCV.pdf" class="thumbnail">
-                <img src="Images/Maths.png" class="img-responsive img-rounded">
+                <img src="images/Maths.png" class="img-responsive img-rounded">
                 <div class="caption text-center">
                     <h4>My Qualifications</h4>
                     <p>Read my qualifications/CV</p>
@@ -32,7 +32,7 @@
         </div>
         <div class="col-md-4">
             <a href="projects.php" class="thumbnail">
-                <img src="Images/Code.png" class="img-responsive img-rounded">
+                <img src="images/Code.png" class="img-responsive img-rounded">
                 <div class="caption text-center">
                     <h4>My Projects</h4>
                     <p>View my previous projects</p>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">p
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="..\..\CSS\bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="..\..\JavaScript\search.js"></script>
+    <title>Machine Learning</title>
+</head>
+<body>
+<div id="main">
+    <div class="container-fluid" id="top">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <a class="navbar-brand active" href="..\..\Home.html">Home</a>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="..\Machine Learning\Machine Learning.html">Machine Learning</a></li>
+                <li><a href="..\History\History.html">History</a></li>
+                <li><a href="..\Significance\Significance.html">Significance</a></li>
+                <li><a href="..\Folding Robots\Home.html">Laundry Robots</a></li>
+                <li class="dropdown"><a href="..\Vacuum\Home.html">Vacuum Robots<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="..\Vacuum\Home.html">Random Vacuuming</a></li>
+                        <li><a href="..\Vacuum\SLAM.html">Mapping Vacuuming</a></li>
+                    </ul>
+                </li>
+                <li><a href="..\Grasping Robots\Grasping Robots.html">Grasping</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="input-group">
+                    <input id="search-bar" type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                        <button id="search-button" type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </nav>
+    </div>
+    <div class="container-fluid" id="content">
+        <div class="row">
+            <div id="text" class="col-md-8">
+                <h1>Machine Learning</h1>
+                <p>Home robotics can be heavily reliant on machine learning algorithms, as it is often easier and more practical to have a robot learn to do the tasks, rather than to hard code every possible scenario into it.</p>
+                <p>There are two main methods of machine learning methods, supervised and unsupervised. Each method has its own merits and usage.</p>
+                <p><h4><b><br>Supervised (1)</b></h4></p>
+                <p><br>Machines that are based on supervised learning algorithms require labelled training data. The algorithm will learn to map the input to output with a function, y = f(x), where y is the output variable, and x is the input variable. The goal of this algorithm is to predict the output of new events based on past events.</p>
+                To solve a problem using supervised learning, one must do the following:
+                <ol>1. Determine what the training examples will consist, for example if you want to predict housing prices, you’ll need to decide on factors such as whether the property is commercial, residential, or industrial, what country it is in, etc.</ol>
+                <ol>2. Gather the training data, in this case it’ll have to include determinants such as apartment size, age, location, with the corresponding output, price.</ol>
+                <ol>3. Typically, the input data is transformed into a vector, which contains several features that describe the object. However, the number of features should not be too great, because of the curse of dimensionality, but enough relevant information for an accurate output prediction.</ol>
+                <ol>4. Select a structure for the learned function and algorithm. For example, support vector machine.</ol>
+                <ol>5. Run the learning algorithm on the training set to test it, some algorithms require control parameters to be set.</ol>
+                <ol>6. Evaluate the accuracy of the learned function using a set of data that is not the training set.</ol>
+                <br>There are four major downsides to supervised learning.
+                <br>Curse of dimensionality
+                <p><br>It refers to a phenomenon that occurs when analyzing and organizing high-dimensional spaces. As the dimension increases, the amount of data required to support the result grows exponentially. Some of the features of the data might have no correlation with the output, but due to the way supervised learning works, it’ll still take into account irrelevant data for its predictions. This ties into Hughes phenomenon, which states an inverse relationship between predictive power and dimensionality.</p>
+                <br><b>Bias-Variance tradeoff</b>
+                <p><br>If an algorithm has low-bias, then it’ll fit well with the data, but leading to it fitting to each set of data differently, and hence high variance. On the other hand, an algorithm with low variance will not have an accurate output prediction.</p>
+                <br><b>Amount of training data available</b>
+                <p><br>There might not be enough training data available for the user to use, and functions of high complexity will require a huge amount of training data.</p>
+                <br><b>Error in input data</b>
+                <p><br>In huge amounts of training data, there are bound to be some errors, let it be random or systematic errors. These errors will result in outliers the mapping function, and can corrupt the training data as the algorithm will attempt to fit the incorrect data into its function.</p>
+                <p><h4><b><br>Unsupervised (1)</b></h4></p>
+                <p><br>Unlike supervised machine learning algorithms, unsupervised machine learning algorithms use unlabelled training data. One of the main distinctions between unsupervised and the other two types of machine learning is that there is no accurate evaluation on the output, as the input has no actual meaning behind it (label)</p>
+                <p>There are several types of unsupervised machine learning algorithms, including clustering and neural networks.</p>
+                <br><b>Clustering</b>
+                <p><br>As mentioned previously, unsupervised algorithms are given unlabelled data. The task of clustering algorithms is to split the data into several clusters, each cluster having a certain trait. There are many different clustering algorithms, as seen in this Wikipedia List (https://en.wikipedia.org/wiki/List_of_algorithms#Statistics).
+                <p>One of the prominent types of clustering algorithms is known as hierarchical clustering, which clusters its data based on the ‘distance’ between each set of dat. The distance being the result of a metric being applied to two points on a graph of two or more dimensions. These metrics include the Euclidean distance, Manhattan distance etc.
+                <p>Another common type of clustering models is known as k-means clustering. It will partition the data into k clusters. At the centre of each cluster is a centroid. At first, centroids are randomly placed, and each data point is mapped to the closest cluster. The clusters then find its new centroid based on an average of its assigned points. These two steps are repeated until the centroids no longer change.
+                <p>One of the criticisms of k-means clustering is that it requires an input of k, and a poor choice of k will result in poor output.
+                    <br>
+                    <br><b>Neural Networks(3)(4)</b>
+                <p><br>Neural networks are a collection of artificial neural units, with connectives between each neuron and many others. The goal of neural networks is to simulate how a human would solve a problem, and mainly used to recongize patterns from a series of data. </p>
+                <p>Neurons within a neural network are arranged in layers, there are at least three layers, including input, and output layers, as well as one or more hidden layers. The 'synapses' which connect the neurons together each carry a weight, and the total weight of all the synapses connected to a neuron determines its state. The state of a neuron is either activated, or not. If it is activated, then it will continue to affect the connected neurons on the next layer, until eventually the output layer is reached, and the activated neurons represents the output.</p>
+            </div>
+            <div id="image" class="col-md-4">
+                <br><br><br><br><br><br><br><br><br>
+                <br><img src="https://ml.berkeley.edu/blog/assets/tutorials/1/image_1.svg" width="100%">
+                <p>The image above demonstrates, on the most basic level, how a supervised learning algorithm would work. A group of trained data, including information about size and colour, as well as its identification, is plotted on the graph. New data will then be sorted based on where it falls in the graph. </p>
+                <a href="https://ml.berkeley.edu/blog/assets/tutorials/1/image_1.svg">Source</a>
+
+                <br><br><br><br><br><br><br><br><br><br>
+                <br><img src="http://www.sthda.com/sthda/RDoc/figure/clustering/model-based-clustering-visualization-2.png" width="100%">
+                <p>This is an example of a clustering, unsupervised machine learning algorithm. The only data provided are the two axes, waiting and eruptions. The algorithm then groups the data to a predetermined amount, or range, of clusters.</p>
+                <a href="http://www.sthda.com/sthda/RDoc/figure/clustering/model-based-clustering-visualization-2.png">Source</a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="references">
+        <b>Reference List:</b>
+        <br>1. Andrew Ng. Supervised Learning - Stanford University Coursera . https://www.coursera.org/learn/machine-learning/lecture/1VkCb/supervised-learning (accessed 25 February 2017).
+        <br>2. Andrew Ng. Unsupervised Learning - Stanford University Coursera . https://www.coursera.org/learn/machine-learning/lecture/olRZo/unsupervised-learning (accessed 25 February 2017).
+        <br>3. Christos Stergiou, Dimitrios Siganos . Neural Networks. https://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol4/cs11/report.html#Introduction to neural networks (accessed 25 February 2017).
+        <br>4. Finger Bolo. A Basic Introduction To Neural Networks. http://pages.cs.wisc.edu/~bolo/shipyard/neural/local.html (accessed 25 February 2017).</p>
+    </div>
+</div>
+</body>
+</html>

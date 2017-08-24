@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="..\..\CSS\bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="..\..\JavaScript\search.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="main">
+    <div class="container-fluid" id="top">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <a class="navbar-brand active" href="..\..\Home.html">Home</a>
+            <ul class="nav navbar-nav">
+                <li><a href="..\Machine Learning\Machine Learning.html">Machine Learning</a></li>
+                <li><a href="..\History\History.html">History</a></li>
+                <li><a href="..\Significance\Significance.html">Significance</a></li>
+                <li><a href="..\Folding Robots\Home.html">Laundry Robots</a></li>
+                <li class="dropdown"><a href="..\Vacuum\Home.html">Vacuum Robots<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="..\Vacuum\Home.html">Random Vacuuming</a></li>
+                        <li><a href="..\Vacuum\SLAM.html">Mapping Vacuuming</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="..\Grasping Robots\Grasping Robots.html">Grasping</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="input-group">
+                    <input id="search-bar" type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                        <button id="search-button" type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </nav>
+    </div>
+    <div class="container-fluid" id="content">
+        <div class="row" id="text">
+            <h1>Grasping Robots</h1>
+            <br>
+        </div>
+        <div class="row">
+            <div id="text" class="col-md-8">
+                <p><h4><b>Grasping</b></h4></p>
+                <p>Grasping objects is an important home robotics problem with many vital applications.
+                    Knowing the right position and technique to hold an object is crucial in robots that
+                    incorporate elements of picking things up or manipulating an object, be it a robot
+                    that opens doors, picks things out of a bag, or even one that <a href="../Folding Robots/Home.html">
+                        folds your clothes.</a></p>
+
+                <p>The grasping problem is still a difficult problem for robots. Humans may have had years
+                    of practice interacting with their surroundings to fine-tune their motor skills, but robots
+                    will not have had this experience. Dealing with the complexity of varying appearance, shape,
+                    friction, or even mass in the object, as well as the always-changing environment the object
+                    find itself in, makes grasping and interacting with objects a continuous challenge – as opposed
+                    to the adaptable and applicable human hand. <a href="../Machine Learning/Machine Learning.html">
+                        Machine learning</a>, computer vision, and optimizing the grip functions are therefore vital in
+                    helping robots come to grips with complex new objects and surroundings. </p>
+
+                <p><h4><b>Machine Learning in Grasping Robots</b></h4></p>
+                <p>Deep learning is fundamental to improving
+                    the quality of grasping robots. With a large selection of data, better responses from robots can
+                    be trained in a shorter time. <a href="https://www.doc.ic.ac.uk/~ejohns/Documents/ejohns-grasp-function-iros2016.pdf">This study</a> (1) done by academics at Imperial shows the potency
+                    of this technique, where robots were able to utilize deep learning to optimize a function to
+                    determine where to grip an object. <a href="http://spectrum.ieee.org/automaton/robotics/artificial-intelligence/google-large-scale-robotic-grasping-project">Google have also had a similar approach in developing their robots</a> (2)
+                    – which created a more robust grasp that would take into account minor hardware and
+                    camera calibration variations. Using a central neural network, multiple robots are able to work on
+                    the same problem, sharing their results and continually building off these results. This also allows
+                    autonomy within the development of the robot’s grasping, eliminating the need for hand-engineered
+                    solutions and instead allowing the robot to adapt and grow their knowledge.
+                </p>
+                <p>Learning this grasp function within the neural network was done by minimizing the loss function,
+                    which maps events onto a real number:
+                    <img src="lossfunction.png" width = 30%>
+                    <img src="softmax.png" width = 30%><br>
+                    The indicator function (delta) is equal to 1 if and only if the two parameter scores are equal -
+                    otherwise it is equal to 0. The softmax function is the standard for neural network classification
+                    because only the relative values of scores are important. (1)
+                </p>
+                <p>
+                    These solutions require an abundance of training data; the Google study estimated that changes only
+                    began to really come into fruition once 800,000 trials had occurred – over 3000 hours of learning. (2)
+                    Creating this data manually is exhausting and difficult, so data is normally generated through a
+                    mixture of physics and image simulations. Nevertheless, real-life experiments are also crucial to
+                    developing a synthesis in grasping, and this combination gives a wide range of available data to
+                    the network.
+                </p>
+
+                <p><h4><b>Computer Vision</b></h4></p>
+                <p>To aid the autonomy of grasping, the robot must be able to convert the images it takes in from its
+                    camera into computer images, specifying the depth of the object to allow a suitable map to be created.
+                    This vision-based approach for learning is generally used in robots to improve their grasping ability,
+                    as it is greatly adaptable and the desired grasp position can be calculated from these depth images,
+                    utilizing the available learning techniques. (1)
+                </p>
+                <p>
+                    Computing the target pose through image observations calibrates the camera with respect to the robot,
+                    noting the horizontal and vertical translations of the gripper from the centre of the image, as well
+                    as the rotation of the gripper about the z-axis of the image. The target pose can be transformed from
+                    these image coordinates to a format in the robot’s frame by the following transformations: (1)
+                    <img src="transformations.png" width = 30%> <br>
+                    where TRP is the target gripper pose in the robot frame,
+                    TRG is the transformation between the robot frame and the
+                    starting gripper frame (when the image was captured), TGC
+                    is the calibrated transformation between the gripper frame
+                    and the camera frame, and TCI is the transformation between
+                    2D image coordinates and the 3D camera frame.
+                </p>
+
+                <p><h4><b>Optimising Grip</b></h4></p>
+                <p>
+                    Given the basic strategy of a grasping by looking at the object and selecting where to grab,
+                    optimizing the grip pose is important to this process. In the previously mentioned Imperial study (1),
+                    the grasp function was optimised to be more robust by introducing uncertainties in the calculation
+                    of the grip position, smoothing the grasp function to select regions of high grasp quality rather
+                    than just a single point with a high grasp quality. This is done by taking the processed depth
+                    image and outputting a grasp function that would predict the quality of each gripper pose if a
+                    grasp was attempted there, done by smoothing the grasp function in 3 dimensions with a kernel
+                    corresponding to a Gaussian distribution that uses a covariance matrix to represent the uncertainty.
+                </p>
+
+                <p><h4><b>Improving the Hand</b></h4></p>
+                <p>
+                    In terms of hardware, having a mechanically robust hand is also critical in improving the grasping
+                    quality (3). Designing the structure of the hand to include features of compliance and adaptability can
+                    eliminate the uncertainties created by traditional, more fragile hands. Being able to passively
+                    adapt to large variations in object geometry allow for a much more reliable grasp, as does building
+                    the hand to be underactuated – taking advantage of momentum to create a mechanism with more degrees
+                    of freedom than actuators controlling its movement. This creates a more fluid and smooth motion,
+                    all in all making a robust hand that provides reliable and consistent grip.
+                </p>
+            </div>
+            <div id="image" class="col-md-4">
+                <img src="wear.png" width="100%" vspace = 30>
+                <i>Above: The varied appearances of the grippers used in collecting data, having experienced various degrees of use.</i> (2)
+                <img src="grasping.png" width = 100% vspace = 30>
+                <i>Above: A selection of items used in real-life testing by the grasping robots of the Imperial study.</i>(1)
+                <img src="4finger.png" width="100%" vspace = 30>
+                <i>Above: A four-fingered robust gripper developed at Harvard that uses underactuating as a technique to improve grip quality.</i>(3)
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="references">
+        <b>Reference List: </b>
+        <p>(1) Johns, E.; Leutenegger, S.; Davison, A. Deep Learning a Grasp Function for a Grasping under Gripper Pose Uncertainty
+            <a href="https://www.doc.ic.ac.uk/~ejohns/Documents/ejohns-grasp-function-iros2016.pdf">https://www.doc.ic.ac.uk/~ejohns/Documents/ejohns-grasp-function-iros2016.pdf</a>
+            2016, (Accessed 11 March 2017)</p>
+        <p>
+            (2) Levine, S.; Deep Learning for Robots: Learning from Large-Scale Interaction
+            <a href="https://research.googleblog.com/2016/03/deep-learning-for-robots-learning-from.html">https://research.googleblog.com/2016/03/deep-learning-for-robots-learning-from.html</a>
+            2016, (Accessed 16 March 2017)
+        </p>
+        <p>(3) Dollar, A.; Howe, R. Simple, Robust Autonomous Grasping in Unstructured Environments
+            <a href="https://www.eng.yale.edu/grablab/pubs/dollar_ICRA07.pdf">https://www.eng.yale.edu/grablab/pubs/dollar_ICRA07.pdf</a>
+            proceedings of the 2007 IEEE International Conference on Robotics and Automation (ICRA), Rome, Italy, April 10-14, 2007. (Accessed 11 March 2017)</p>
+    </div>
+</div>
+</body>
+</html>
