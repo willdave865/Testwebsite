@@ -11,11 +11,11 @@
 <body>
 <div class="container">
     <div class="row">
+        <h1 class="text-center">About Me</h1>
         <div class="col-md-3">
             <img src="Images\AboutMe.jpg" class="img-responsive img-rounded">
         </div>
         <div class="col-md-9">
-            <h4><b>About Me</b></h4>
             <p>Hello! My name is James and I am an undergraduate student in the Department of Computing at Imperial College London studying Joint Mathematics and Computing.</p>
             <p>My pastimes include programming, video games, watching films, and not playing sports.</p>
             <p>I also play a lot of music</p>
