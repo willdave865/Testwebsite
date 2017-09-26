@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="CSS/personalPage.css">
     <title>About Me</title>
 </head>
     <?php
@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row">
         <h1 class="text-center">About Me</h1>
-        <div class="col-md-3">
+        <div class="col">
             <img src="Images\AboutMe.jpg" class="img-responsive img-rounded">
         </div>
         <div class="col-md-9">

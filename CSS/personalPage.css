@@ -1,11 +1,22 @@
 
+/*
+This is my first time writing a proper CSS file for a website and so please excuse any unconventional methods (and do let me know how I can improve! Please let me know at james.tavernor16@imperial.ac.uk
+ */
+
+
 /* PAGE CSS */
 
 html {
     font-family: "Trebuchet MS";
+    background-color: #ffffff;
+    color: #000;
 }
 body {
     margin: 0px;
+}
+a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 /* CLASSES */
@@ -46,28 +57,28 @@ body {
 .tiles {
     width: 33.3333%;
 }
-@media (min-width: 0px) {
+/* setting tiles to look good on any size screen */
+@media (max-width: 1089px) {
     .tiles {
-        min-width: 100%;
+        min-width: 0%;
+    }
+    .rowTilesConstantHeight {
+        display: flex;
+    }
+}
+@media (max-width: 500px) {
+    .tiles {
+        min-width: 50%;
     }
     .rowTilesConstantHeight {
         display: flex;
         flex-wrap: wrap;
     }
 }
-@media  (min-width: 300px){
-    /*any screen smaller than this will look weird if they are still kept on same line*/
+@media  (max-width: 400px){
+    /*any screen this size will look weird if they are still kept on same line*/
     .tiles {
-        min-width: 50%;
-    }
-
-}
-@media (min-width: 500px) {
-    .tiles {
-        min-width: 0%;
-    }
-    .rowTilesConstantHeight {
-        display: flex;
+        min-width: 100%;
     }
 }
 @media (min-width: 1090px) {
@@ -77,19 +88,25 @@ body {
     }
 }
 
+
 /* TILES FROM FRONT PAGE CSS */
 
 .captionedImage {
     padding: 0px;
+    background-color: #07889b;
     border: solid 1px;
     border-radius: 5%;
-    color: rgba(0, 0, 0, 0.33);
-}
-.captionedImage:hover {
     color: #000;
     -webkit-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
     box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
+
+}
+.captionedImage:hover {
+    border-width: thin;
+    -webkit-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* IMAGE CSS */
@@ -107,7 +124,47 @@ body {
 }
 
 /* HEADER CSS */
+.navbarTop {
+    position: static;
+    width: 100%;
+    border-radius: 0 0 15px 15px;
+    background-color: #07889b;
+    -webkit-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
+}
 
+.navbarTop .container {
+    max-width: 100%;
+    display: block;
+    padding: 15px;
+}
+
+
+
+.navBarHome {
+    height:100%;
+    padding: 10px;
+    font-size: x-large;
+    border-right: 2px solid;
+    border-color: #66b9bf;
+}
+
+.navBarButton {
+    padding: 5px;
+    font-size: large;
+}
+
+@media (max-width: 400px) {
+    /* a device 385px or less won't display correctly */
+    /* this 'mobile' site will just have a large Home at the top and links underneath which may wrap */
+    .navBarHome {
+        padding: 5px;
+        display: flex;
+        border-right: none;
+        height: 100%;
+    }
+}
 
 /*
 container -> row -> column (divide by 3 used often, 4 also used) [[possibly use an ID here for header and footer?]]

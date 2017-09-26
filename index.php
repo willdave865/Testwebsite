@@ -5,11 +5,11 @@
     <link rel="stylesheet" href="CSS/personalPage.css">
     <title>James Tavernor</title>
 </head>
+<body>
 <?php
 include 'header.html';
 ?>
-<body>
-<div class="container">
+<div class="container mainBody">
     <h1 class="text-centre">Welcome to my website</h1>
     <div class="rowTilesConstantHeight">
         <div class="col tiles">
