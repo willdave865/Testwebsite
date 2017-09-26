@@ -1,0 +1,106 @@
+html {
+    /* font */
+}
+body {
+    margin: 0px;
+}
+/* CLASSES */
+.text-centre {
+    text-align: center;
+}
+
+.container {
+    padding: 10px;
+    margin: auto;
+}
+/* everything in container should be border-box so padding is included in width/height */
+.container *{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.row, .rowTilesConstantHeight {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.rowTilesConstantHeight .col .captionedImage{
+    height: 100%;
+}
+
+.col {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    padding: 10px;
+}
+
+.tiles {
+    width: 33.3333%;
+}
+@media (min-width: 0px) {
+    .tiles {
+        min-width: 100%;
+    }
+    .rowTilesConstantHeight {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+@media  (min-width: 300px){
+    /*any screen smaller than this will look weird if they are still kept on same line*/
+    .tiles {
+        min-width: 50%;
+    }
+
+}
+@media (min-width: 500px) {
+    .tiles {
+        min-width: 0%;
+    }
+    .rowTilesConstantHeight {
+        display: flex;
+    }
+}
+@media (min-width: 1090px) {
+    /* this is the max size that will display nicely */
+    .container {
+        max-width: 1090px;
+    }
+}
+
+.captionedImage {
+    padding: 0px;
+    border: solid 1px;
+    border-radius: 5%;
+    color: rgba(0, 0, 0, 0.33);
+}
+.captionedImage:hover {
+    color: #000;
+    -webkit-box-shadow: 2px 2px #595959;
+    -moz-box-shadow: 2px 2px #595959;
+    box-shadow: 2px 2px #595959;
+}
+
+.image-resize {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.image-round {
+    border-radius: 5%;
+}
+/*
+container -> row -> column (divide by 3 used often, 4 also used) [[possibly use an ID here for header and footer?]]
+
+navbar classes need sorting
+navbar -> navbar buttons
+
+text-centre
+
+table
+*/
