@@ -14,9 +14,9 @@ html {
 body {
     margin: 0px;
 }
-a {
-    color: #ffffff;
-    text-decoration: none;
+
+a:hover {
+    text-decoration: underline;
 }
 
 /**** CLASSES BELOW ****/
@@ -228,6 +228,20 @@ th, td {
     -webkit-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
     box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
+}
+
+.navBarTop a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navBarButton:hover {
+    text-decoration: underline;
+}
+
+.navBarHome:hover{
+    /* Add code here if animation is desired on the home button too */
+    text-decoration: none;
 }
 
 .navBarTop .container {
