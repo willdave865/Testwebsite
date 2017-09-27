@@ -19,12 +19,14 @@ a {
     text-decoration: none;
 }
 
-/* CLASSES */
+/**** CLASSES BELOW ****/
 
 .text-centre {
     text-align: center;
 }
-
+.title {
+    margin-bottom: 0;
+}
 /* CONTAINER CSS */
 
 .container {
@@ -39,53 +41,115 @@ a {
 }
 
 .row, .rowTilesConstantHeight {
+    width: 100%;
+    float: left;
     margin-left: -10px;
     margin-right: -10px;
+}
+
+.indexPage .rowTilesConstantHeight {
     padding-top: 15vh;
 }
+
 @media (max-width: 750px) {
-    /* the padding of 25vh is to make it look nice in the middle on a desktop */
+    /* the padding of 15vh is to make it look nice in the middle on a desktop so disable it for smaller devices */
     .row, .rowTilesConstantHeight {
         padding-top: 0;
     }
 }
 
-.rowTilesConstantHeight .col .captionedImage{
-    height: 100%;
-}
-
-.col {
-    position: relative;
+/* setting up my columns to be up to 6 columns per row */
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6 {
     min-height: 1px;
     float: left;
     padding: 10px;
+    width: 16.6666%;
 }
 
-.tiles {
+/* defined the width of col-1 in the above comment and then overwrite it for the other columns below*/
+
+.col-2 {
     width: 33.3333%;
 }
+
+.col-3 {
+    width: 50%;
+}
+
+.col-4 {
+    width: 66.6666%;
+}
+
+.col-5 {
+    width: 83.3333%;
+}
+
+.col-6 {
+    width: 100%;
+}
+
 /* setting tiles to look good on any size screen */
 @media (max-width: 1089px) {
-    .tiles {
-        min-width: 0%;
-    }
     .rowTilesConstantHeight {
         display: flex;
     }
 }
 @media (max-width: 750px) {
-    .tiles {
-        min-width: 50%;
+    .col-1 {
+        width: 33.3333%;
+    }
+    .col-2 {
+        width: 50%;
+    }
+    .col-3 {
+        width: 66.6666%;
+    }
+    .col-4 {
+        width: 83.3333%;
+    }
+    .col-5 {
+        width: 100%;
     }
     .rowTilesConstantHeight {
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
+    }
+    .indexPage .rowTilesConstantHeight {
+        padding-top: 5vh;
+    }
+    .aboutPage .col-5 {
+        width: 66.6666%;
     }
 }
 @media  (max-width: 400px){
-    /*any screen this size will look weird if they are still kept on same line*/
-    .tiles {
-        min-width: 100%;
+    /* up column size again */
+    .col-1 {
+        width: 50%;
+    }
+    .col-2 {
+        width: 66.6666%;
+    }
+    .col-3 {
+        width: 83.3333%;
+    }
+    .col-4, .col-5 {
+        width: 100%;
+    }
+    .indexPage .col-2 {
+        /* on the home page want the tiles to make up 100% of screen */
+        width: 100%;
+    }
+    .indexPage .rowTilesConstantHeight {
+        padding-top: 0;
+    }
+    .title {
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .aboutPage [class*="col-"] {
+        width: 100%;
     }
 }
 @media (min-width: 1090px) {
@@ -94,19 +158,26 @@ a {
         max-width: 1090px;
     }
 }
+@media (min-width: 750px) {
+    /* for screens bigger than this I want the about title to appear above the text not image on the about page */
+    .title .col-2 {
+        float: right;
+    }
+}
 
 
 /* TILES FROM FRONT PAGE CSS */
 
 .captionedImage {
+    height: 100%;
     padding: 0px;
+    padding-bottom: 1px;
     background-color: #96c8fa;
     border-radius: 5%;
     color: #000;
     -webkit-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
     box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
-
 }
 .captionedImage:hover {
     -webkit-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.4);
@@ -114,17 +185,19 @@ a {
     box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.4);
 }
 
+.captionedImage h3 {
+    margin: 5px;
+}
+
 /* IMAGE CSS */
 
-.image-resize {
-    margin-left: 0px;
-    margin-right: 0px;
+.imageResize {
     margin: 0px;
     width: 100%;
     text-align: center;
 }
 
-.image-round {
+.imageRounded {
     border-radius: 5%;
 }
 

@@ -9,14 +9,17 @@
         include 'header.html';
     ?>
 <body>
-<div class="container">
+<div class="container aboutPage">
     <div class="row">
-        <h1 class="text-center">About Me</h1>
-        <div class="col">
-            <img src="Images\AboutMe.jpg" class="img-responsive img-rounded">
+        <div class="col-1"></div>
+        <h1 class="text-center title col-5">About Me</h1>
+    </div>
+    <div class="row">
+        <div class="col-1">
+            <img src="Images\AboutMe.jpg" class="imageResize imageRounded">
         </div>
-        <div class="col-md-9">
-            <p>Hello! My name is James and I am an undergraduate student in the Department of Computing at Imperial College London studying Joint Mathematics and Computing.</p>
+        <div class="col-5">
+            <p style="margin-top: 0;">Hello! My name is James and I am an undergraduate student in the Department of Computing at Imperial College London studying Joint Mathematics and Computing.</p>
             <p>My pastimes include programming, video games, watching films, and not playing sports.</p>
             <p>I also play a lot of music</p>
             <ul>
