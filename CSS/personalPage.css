@@ -209,7 +209,7 @@ th, td {
         width: 100%;
     }
 }
-@media screen and  (max-width: 400px) {
+@media screen and (max-width: 400px) {
     /* up column size again */
     .col-1 {
         width: 50%;
@@ -345,7 +345,7 @@ th, td {
     font-size: large;
 }
 
-@media screen and (max-width: 400px) and (orientation: portrait) {
+@media screen and (max-device-width: 400px) and (orientation: portrait) {
     /* a device 385px or less won't display correctly */
     /* this 'mobile' site will just have a large Home at the top and links underneath which may wrap */
     .navBarHome {
@@ -353,5 +353,24 @@ th, td {
         display: flex;
         border-right: none;
         height: 100%;
+        font-size: xx-large;
+    }
+    .navBarButton {
+        font-size: x-large;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    /* a device 385px or less won't display correctly */
+    /* this 'mobile' site will just have a large Home at the top and links underneath which may wrap */
+    .navBarHome {
+        padding: 5px;
+        display: flex;
+        border-right: none;
+        height: 100%;
+        font-size: xx-large;
+    }
+    .navBarButton {
+        font-size: x-large;
     }
 }
