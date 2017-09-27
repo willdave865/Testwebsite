@@ -10,13 +10,12 @@
 include 'header.html';
 ?>
 <div class="container mainBody">
-    <h1 class="text-centre">Welcome to my website</h1>
     <div class="rowTilesConstantHeight">
         <div class="col tiles">
             <div class="captionedImage text-centre">
                 <a href="about.php">
                     <img src="images/PersonalPicture.png" class="image-resize image-round">
-                    <h4>About me</h4>
+                    <h3>About Me</h3>
                     <p>Find out more about me</p>
                 </a>
             </div>
@@ -25,7 +24,7 @@ include 'header.html';
             <div class="captionedImage text-centre">
                 <a href="publicCV.pdf">
                     <img src="images/Maths.png" class="image-resize image-round">
-                    <h4>My Qualifications</h4>
+                    <h3>My Qualifications</h3>
                     <p>Read my qualifications/CV</p>
                 </a>
             </div>
@@ -34,7 +33,7 @@ include 'header.html';
             <div class="captionedImage text-centre">
                 <a href="projects.php" class="thumbnail">
                     <img src="images/Code.png" class="image-resize image-round">
-                    <h4>My Projects</h4>
+                    <h3>My Projects</h3>
                     <p>View my previous projects</p>
                 </a>
             </div>

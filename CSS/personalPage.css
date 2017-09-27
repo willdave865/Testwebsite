@@ -7,9 +7,9 @@ This is my first time writing a proper CSS file for a website and so please excu
 /* PAGE CSS */
 
 html {
-    font-family: "Trebuchet MS";
+    font-family: HelvLight;
     background-color: #ffffff;
-    color: #000;
+    color: #000000;
 }
 body {
     margin: 0px;
@@ -41,6 +41,13 @@ a {
 .row, .rowTilesConstantHeight {
     margin-left: -10px;
     margin-right: -10px;
+    padding-top: 15vh;
+}
+@media (max-width: 750px) {
+    /* the padding of 25vh is to make it look nice in the middle on a desktop */
+    .row, .rowTilesConstantHeight {
+        padding-top: 0;
+    }
 }
 
 .rowTilesConstantHeight .col .captionedImage{
@@ -66,7 +73,7 @@ a {
         display: flex;
     }
 }
-@media (max-width: 500px) {
+@media (max-width: 750px) {
     .tiles {
         min-width: 50%;
     }
@@ -93,8 +100,7 @@ a {
 
 .captionedImage {
     padding: 0px;
-    background-color: #07889b;
-    border: solid 1px;
+    background-color: #96c8fa;
     border-radius: 5%;
     color: #000;
     -webkit-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
@@ -103,7 +109,6 @@ a {
 
 }
 .captionedImage:hover {
-    border-width: thin;
     -webkit-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.4);
     box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.4);
@@ -128,7 +133,7 @@ a {
     position: static;
     width: 100%;
     border-radius: 0 0 15px 15px;
-    background-color: #07889b;
+    background-color: #96c8fa;
     -webkit-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
     box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
