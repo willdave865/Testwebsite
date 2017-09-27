@@ -9,10 +9,10 @@
         include 'header.html';
     ?>
 <body>
+<h1 class="text-centre">My Projects</h1>
 <div class="container">
-    <h1 class="text-center">My Projects</h1>
     <div class="row">
-        <table class="table">
+        <table class="text-centre" style="align-content: center">
             <tr>
                 <th>Project Name</th>
                 <th>Description</th>

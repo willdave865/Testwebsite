@@ -12,7 +12,7 @@
 <div class="container aboutPage">
     <div class="row">
         <div class="col-1"></div>
-        <h1 class="text-center title col-5">About Me</h1>
+        <h1 class="title col-5">About Me</h1>
     </div>
     <div class="row">
         <div class="col-1">
