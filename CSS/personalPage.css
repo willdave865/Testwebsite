@@ -68,6 +68,12 @@ th, td {
     padding-top: 15vh;
 }
 
+@media screen and (max-device-width: 750px) and (orientation: portrait) {
+    /* the padding of 15vh is to make it look nice in the middle on a desktop so disable it for smaller devices */
+    .row, .rowTilesConstantHeight {
+        padding-top: 0;
+    }
+}
 @media screen and (max-width: 750px) {
     /* the padding of 15vh is to make it look nice in the middle on a desktop so disable it for smaller devices */
     .row, .rowTilesConstantHeight {
@@ -106,9 +112,42 @@ th, td {
 }
 
 /* setting tiles to look good on any size screen */
-@media screen and (max-width: 1089px) {
+@media screen and (max-device-width: 1089px) and (orientation: portrait) {
     .rowTilesConstantHeight {
         display: flex;
+    }
+}
+@media screen and (max-width: 1089px)  {
+    .rowTilesConstantHeight {
+        display: flex;
+    }
+}
+@media screen and (max-device-width: 750px) and (orientation: portrait) {
+    .col-1 {
+        width: 33.3333%;
+    }
+    .col-2 {
+        width: 50%;
+    }
+    .col-3 {
+        width: 66.6666%;
+    }
+    .col-4 {
+        width: 83.3333%;
+    }
+    .col-5 {
+        width: 100%;
+    }
+    .rowTilesConstantHeight {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .indexPage .rowTilesConstantHeight {
+        padding-top: 5vh;
+    }
+    .aboutPage .col-5 {
+        width: 66.6666%;
     }
 }
 @media screen and (max-width: 750px) {
@@ -139,7 +178,7 @@ th, td {
         width: 66.6666%;
     }
 }
-@media screen and  (max-width: 400px){
+@media screen and  (max-device-width: 400px) and (orientation: portrait){
     /* up column size again */
     .col-1 {
         width: 50%;
@@ -170,10 +209,53 @@ th, td {
         width: 100%;
     }
 }
+@media screen and  (max-width: 400px) {
+    /* up column size again */
+    .col-1 {
+        width: 50%;
+    }
+    .col-2 {
+        width: 66.6666%;
+    }
+    .col-3 {
+        width: 83.3333%;
+    }
+    .col-4, .col-5 {
+        width: 100%;
+    }
+    .indexPage .col-2 {
+        /* on the home page want the tiles to make up 100% of screen */
+        width: 100%;
+    }
+    .indexPage .rowTilesConstantHeight {
+        padding-top: 0;
+    }
+    .title {
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        text-align: center;
+    }
+    .aboutPage [class*="col-"] {
+        width: 100%;
+    }
+}
+@media screen and (min-device-width: 1090px) and (orientation: portrait) {
+    /* this is the max size that will display nicely */
+    .container {
+        max-width: 1090px;
+    }
+}
 @media screen and (min-width: 1090px) {
     /* this is the max size that will display nicely */
     .container {
         max-width: 1090px;
+    }
+}
+@media screen and (min-device-width: 750px) and (orientation: portrait) {
+    /* for screens bigger than this I want the about title to appear above the text not image on the about page */
+    .title .col-2 {
+        float: right;
     }
 }
 @media screen and (min-width: 750px) {
@@ -263,7 +345,7 @@ th, td {
     font-size: large;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) and (orientation: portrait) {
     /* a device 385px or less won't display correctly */
     /* this 'mobile' site will just have a large Home at the top and links underneath which may wrap */
     .navBarHome {
