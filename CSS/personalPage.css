@@ -149,6 +149,9 @@ th, td {
     .aboutPage .col-5 {
         width: 66.6666%;
     }
+    .container {
+        max-width: 750px;
+    }
 }
 @media screen and (max-width: 750px) {
     .col-1 {
@@ -176,6 +179,9 @@ th, td {
     }
     .aboutPage .col-5 {
         width: 66.6666%;
+    }
+    .container {
+        max-width: 750px;
     }
 }
 @media screen and  (max-device-width: 400px) and (orientation: portrait){
@@ -208,6 +214,9 @@ th, td {
     .aboutPage [class*="col-"] {
         width: 100%;
     }
+    .container {
+        max-width: 400px;
+    }
 }
 @media screen and (max-width: 400px) {
     /* up column size again */
@@ -238,6 +247,9 @@ th, td {
     }
     .aboutPage [class*="col-"] {
         width: 100%;
+    }
+    .container {
+        max-width: 400px;
     }
 }
 @media screen and (min-device-width: 1090px) and (orientation: portrait) {
@@ -345,7 +357,7 @@ th, td {
     font-size: large;
 }
 
-@media screen and (max-device-width: 400px) and (orientation: portrait) {
+@media screen and (max-device-width: 750px) and (orientation: portrait) {
     /* a device 385px or less won't display correctly */
     /* this 'mobile' site will just have a large Home at the top and links underneath which may wrap */
     .navBarHome {
@@ -360,7 +372,7 @@ th, td {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 750px) {
     /* a device 385px or less won't display correctly */
     /* this 'mobile' site will just have a large Home at the top and links underneath which may wrap */
     .navBarHome {
