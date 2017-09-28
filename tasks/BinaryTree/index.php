@@ -210,7 +210,7 @@
                 text = encodeHelper(string.charAt(i), charArray[0], "");
                 //first elem of char array because it is an array with the final array in it
                 //due to building the tree by reducing the array to one single value which is an array
-                var col = Math.random() * 16777215; //this is the max colour value
+                var col = Math.random() * maxCol; //this is the max colour value
                 col = Math.round(col);
                 var backgroundCol = maxCol - col; //this gets the complimentary colour
                 huffmanOutput += "<span style='color: #" + col.toString(16) + ";background-color: #" + backgroundCol.toString(16) + "'>" + text + "</span>";

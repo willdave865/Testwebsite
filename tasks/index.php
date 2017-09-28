@@ -16,7 +16,7 @@ include '../header.html';
     foreach ($filesInDirectory as $currentFile) {
         if (is_dir($currentFile)) {
             //every directory inside this directory we scanned is a project so display it with a link to it
-            echo '<div class="row"></div><a href="' . $currentFile . '">' . $currentFile . '</a></div>';
+            echo '<div class="row"><a href="' . $currentFile . '">' . $currentFile . '</a></div>';
         }
     }
     ?>
