@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="CSS/personalPage.css">
     <title>Projects</title>
 </head>
     <?php
         include 'header.html';
     ?>
 <body>
+<h1 class="text-centre">My Projects</h1>
 <div class="container">
-    <h1 class="text-center">My Projects</h1>
     <div class="row">
-        <table class="table">
+        <table class="text-centre" style="align-content: center">
             <tr>
                 <th>Project Name</th>
                 <th>Description</th>

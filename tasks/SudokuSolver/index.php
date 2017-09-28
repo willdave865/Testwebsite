@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../bootstrap.css">
+    <link rel="stylesheet" href="../../CSS/personalPage.css">
     <title>Sudoku Solver</title>
 </head>
 <?php
