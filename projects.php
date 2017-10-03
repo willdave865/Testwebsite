@@ -44,7 +44,9 @@
                 echo "<td>".$row['Language']."</td>";
                 echo "<td>".$row['Type']."</td>";
                 echo "<td>".$row['Year']."</td>";
-                if ($row['Link']) {
+                if ($row['Type'] == "University Project") {
+                    echo "<td>Not publicly available enquire for details</td>";
+                } else if ($row['Link']) {
                     echo "<td><a href='".$row['Link']."'>Available</a></td>";
                 } else {
                     echo "<td>Unavailable</td>";
@@ -55,7 +57,9 @@
         </table>
     </div>
     <div class="row">
-        <p>You can find my GitHub page <a href="https://github.com/jtavernor">here</a> though some projects listed here date too far back to be on GitHub</p>
+        <p>You can find my GitHub page <a href="https://github.com/jtavernor">here</a> though some projects listed here date too far back to be on GitHub.</p>
+        <p>University projects aren't able to be publicly available as it would enable plagiarism, I can provide screenshots or access to these for valid reasons such as to potential employers.</p>
+        <p>If any links don't work please contact me and I will give you access to the page.</p>
     </div>
 </div>
 </body>
