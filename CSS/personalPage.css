@@ -379,7 +379,7 @@ th, td {
     background-color: rgba(0, 10, 13, 0.1)
 }
 
-@media (max-width: 750px) {
+@media screen and (max-width: 750px) {
     /*
     any device smaller than 750px should just display image and then text
      */
@@ -390,6 +390,15 @@ th, td {
         position: relative;
     }
 }
+@media screen and (max-device-width: 750px) and (orientation: portrait) {
+    .putTextOverImage {
+        margin: 0;
+    }
+    .aboutPage.container {
+        position: relative;
+    }
+}
+
 
 /* HEADER CSS */
 .navBarTop {
