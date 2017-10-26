@@ -2,23 +2,43 @@
 /*
 This is my first time writing a proper CSS file for a website and so please excuse any unconventional methods (and do let me know how I can improve! Please let me know at james.tavernor16@imperial.ac.uk
  */
-
+/* Variables! */
+:root {
+    --background-colour: #001013;
+    --text-colour: #ffffff;
+    --navbar-background-colour: #01313c;
+    --navbar-text-colour: #ffffff;
+    --captioned-images-background-colour: #00232b;
+    --captioned-images-text-colour: #ffffff;
+}
 
 /* PAGE CSS */
 
 html {
-    font-family: HelvLight;
-    background-color: #ffffff;
-    color: #000000;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: var(--background-colour);
+    color: var(--text-colour);
 }
 body {
     margin: 0px;
+}
+
+a {
+    color: var(--text-colour);
+    text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
+ul {
+
+}
+
+li {
+    margin-top: 10px;
+}
 /**** CLASSES BELOW ****/
 
 .text-centre {
@@ -284,9 +304,9 @@ th, td {
     height: 100%;
     padding: 0px;
     padding-bottom: 1px;
-    background-color: #96c8fa;
+    background-color: var(--captioned-images-background-colour);
     border-radius: 5%;
-    color: #000;
+    color: var(--captioned-images-text-colour);
     -webkit-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
     box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
@@ -302,12 +322,12 @@ th, td {
 }
 
 .captionedImage a {
-    color: #ffffff;
+    color: var(--captioned-images-text-colour);
     text-decoration: none;
 }
 
 .captionedImage:hover {
-    color: #ffffff;
+    color: var(--captioned-images-text-colour);
     text-decoration: underline;
 }
 /* IMAGE CSS */
@@ -322,19 +342,68 @@ th, td {
     border-radius: 5%;
 }
 
+.wide-image {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    width: 100%;
+    /*this image is displayed below the navbar but I want it to be behind
+    so I have moved it up 15px
+     */
+    z-index: -1;
+    padding: 0;
+}
+
+.putTextOverImage {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: -25px 0 0 0;
+}
+
+.aboutPage.container {
+    max-width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba(0, 10, 13, 0.1)
+}
+
+@media (max-width: 750px) {
+    /*
+    any device smaller than 750px should just display image and then text
+     */
+    .putTextOverImage {
+        margin: 0;
+    }
+    .aboutPage.container {
+        position: relative;
+    }
+}
+
 /* HEADER CSS */
 .navBarTop {
     position: static;
     width: 100%;
     border-radius: 0 0 15px 15px;
-    background-color: #96c8fa;
+    background-color: var(--navbar-background-colour);
     -webkit-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
     box-shadow: 0 6px 12px 2px rgba(0, 0, 0, 0.25);
 }
 
 .navBarTop a {
-    color: #ffffff;
+    color: var(--navbar-text-colour);
     text-decoration: none;
 }
 
@@ -358,7 +427,7 @@ th, td {
     padding: 10px;
     font-size: x-large;
     border-right: 2px solid;
-    border-color: #66b9bf;
+    border-color: var(--navbar-text-colour);
 }
 
 .navBarButton {
@@ -367,8 +436,20 @@ th, td {
 }
 
 @media screen and (max-device-width: 750px) and (orientation: portrait) {
-    /* a device 385px or less won't display correctly */
-    /* this 'mobile' site will just have a large Home at the top and links underneath which may wrap */
+    .navBarHome {
+        padding: 5px;
+        display: flex;
+        border-right: none;
+        height: 100%;
+        font-size: xx-large;
+    }
+    .navBarButton {
+        font-size: x-large;
+    }
+    .
+}
+
+@media screen and (max-width: 750px) {
     .navBarHome {
         padding: 5px;
         display: flex;
@@ -381,17 +462,8 @@ th, td {
     }
 }
 
-@media screen and (max-width: 750px) {
-    /* a device 385px or less won't display correctly */
-    /* this 'mobile' site will just have a large Home at the top and links underneath which may wrap */
-    .navBarHome {
-        padding: 5px;
-        display: flex;
-        border-right: none;
-        height: 100%;
-        font-size: xx-large;
-    }
-    .navBarButton {
-        font-size: x-large;
-    }
-}
+/*
+*****************************
+CSS FOR THE HUFFMAN TREE TASK
+*****************************
+ */

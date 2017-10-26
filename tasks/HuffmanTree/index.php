@@ -65,7 +65,14 @@
     /*my own css*/
     .tree p {
         border-style: solid;
+        text-align: center;
+    }
 
+    .half {
+        width: 45%;
+        display: inline-block;
+        text-align: center;
+        box-sizing: border-box;
     }
 
     #frequencyTable {
@@ -158,10 +165,10 @@
             var text = "";
             for (var i = 0; i < charArray.length; i++) {
                 if (Array.isArray(charArray[i])) {
-                    text += "<li><p>NODE | " + sumIntArray(freqArray[i]) + "</p><ul>";
+                    text += "<li><p><span class='half'>NODE</span> | <span class='half'> " + sumIntArray(freqArray[i]) + "</span></p><ul>";
                     text += generateOutput(charArray[i], freqArray[i]);
                 } else {
-                    text += "<li><p>" + charArray[i] + " | " + freqArray[i] + "</p></li>";
+                    text += "<li><p><span class='half'>" + charArray[i] + "</span> | <span class='half''>" + freqArray[i] + "</span></p></li>";
                 }
             }
             text += "</ul></il>";
@@ -223,11 +230,14 @@
                 asciiEncoding = new Array(9 - asciiEncoding.length).join('0') + asciiEncoding;
                 normalEncoding += "<span style='color: #" + col.toString(16) + ";background-color: #" + backgroundCol.toString(16) + "'>" + asciiEncoding + "</span>";
             }
+            console.log(charArray.toString());
             document.getElementById('output').style.display = "table";
             document.getElementById('huffmanCodes').innerHTML = huffmanOutput;
             document.getElementById('huffmanWords').innerHTML = textOutput;
             document.getElementById('normalEncoding').innerHTML = normalEncoding;
-            document.getElementById('savedBits').innerHTML = savedBits + " (- bits storing table/tree)";
+            var sizeOfArray;
+            document.getElementById('savedBits').innerHTML = savedBits + " (- bits storing table/tree)<br />" +
+                "I have stored the array using arrays as a branch and chars as leafs which used " + sizeOfArray;
             return text;
         }
         function encodeHelper(char, charArray, whichDir) { //return encoding of character
